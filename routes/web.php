@@ -26,4 +26,7 @@ Route::group(['middleware' => 'role:admin'], function() {
     Route::get('/dashboard', function() {
        return 'Добро пожаловать, Админ';
     });
+    Route::group('/create',[App\Http\Controllers\MangaController::class, 'create'])->name('create');
+    Route::group('/update',[App\Http\Controllers\MangaController::class, 'update'])->name('update');
+    Route::group('/edit',[App\Http\Controllers\MangaController::class, 'edit'])->name('update');
  });
