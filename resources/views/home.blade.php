@@ -13,6 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    @role('admin')
+                        Project Manager Panel
+                    @endrole 
 
                     {{ __('You are logged in!') }}
                 </div>

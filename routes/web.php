@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'role:admin'], function() {
     Route::get('/dashboard', function() {
        return 'Добро пожаловать, Админ';
     });
-    Route::group('/create',[App\Http\Controllers\MangaController::class, 'create'])->name('create');
-    Route::group('/update',[App\Http\Controllers\MangaController::class, 'update'])->name('update');
-    Route::group('/edit',[App\Http\Controllers\MangaController::class, 'edit'])->name('update');
+    Route::get('/create',[App\Http\Controllers\MangaController::class, 'create'])->name('create');
+    Route::get('/update',[App\Http\Controllers\MangaController::class, 'update'])->name('update');
+    Route::get('/edit',[App\Http\Controllers\MangaController::class, 'edit'])->name('update');
  });
+
+ Route::get('/manga',[App\Http\Controllers\MangaController::class, 'index'])->name('index');
