@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RolesServiceProvider::class,
+        TJGazel\Toastr\ToastrServiceProvider::class,
     ],
 
     /*
@@ -226,7 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Toastr' => TJGazel\Toastr\Facades\Toastr::class,
     ],
 
 ];

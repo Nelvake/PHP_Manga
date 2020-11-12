@@ -12,12 +12,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
 
     <!-- Styles -->
     <link href="{{ asset('css/slaty.css') }}" rel="stylesheet" />
+    
 </head>
 
 <body>
@@ -36,7 +40,7 @@
                     </li>
                     @role('admin')
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admin Panel</a>
+                        <a class="nav-link" href="{{ url('/manga/create') }}">Admin Panel</a>
                     </li>
                     @endrole
                     <li class="nav-item">
@@ -79,10 +83,10 @@
             </ul>
         </div>
     </nav>
-
     <main class="py-4">
         @yield('content')
     </main>
+    {!! Toastr::render() !!}
 </div>
 </body>
 

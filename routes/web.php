@@ -24,9 +24,11 @@ Route::group(['middleware' => 'role:admin'], function() {
     Route::get('/dashboard', function() {
        return 'Добро пожаловать, Админ';
     });
-    Route::get('/create',[App\Http\Controllers\MangaController::class, 'create'])->name('create');
+    Route::get('manga/create',[App\Http\Controllers\MangaController::class, 'create'])->name('create');
+    Route::post('manga/create',[App\Http\Controllers\MangaController::class, 'store'])->name('store');
     Route::get('/update',[App\Http\Controllers\MangaController::class, 'update'])->name('update');
     Route::get('/edit',[App\Http\Controllers\MangaController::class, 'edit'])->name('update');
  });
 
  Route::get('/manga',[App\Http\Controllers\MangaController::class, 'index'])->name('index');
+ Route::get('/manga/{id}',[App\Http\Controllers\MangaController::class, 'addToFavorite'])->name('addToFavorite');
