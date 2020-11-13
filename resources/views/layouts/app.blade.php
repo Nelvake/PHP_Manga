@@ -33,7 +33,7 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/manga') }}">Manga
                             <span class="sr-only">(current)</span>
                         </a>
@@ -44,7 +44,7 @@
                     </li>
                     @endrole
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Favorites</a>
+                        <a class="nav-link" href="{{ url('/favorite') }}">Favorites</a>
                     </li>
 
 
